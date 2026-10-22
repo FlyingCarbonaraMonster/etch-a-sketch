@@ -15,16 +15,21 @@ function createGrid(squares = 32) {
     }
 }
 
+function colorSquares(event) {
+    if (event.target.classList.contains("grid") && event.buttons === 1) {
+        event.target.style.backgroundColor = "black";
+    }
+}
+
 const container = document.querySelector("#container");
 const btnSquares = document.querySelector(".squares-number");
 
 createGrid();
 
-container.addEventListener('mouseover', (event) => {
-    if (event.target.classList.contains("grid")) {
-        event.target.style.backgroundColor = "black";
-    }
-});
+container.addEventListener('dragstart', event => {
+    event.preventDefault();
+})
+container.addEventListener('mouseover', colorSquares);
 
 btnSquares.addEventListener('click', () => {
     let numberOfSquares = prompt("How many squares per side? Minimum - 10 Maximum - 100 Default - 32");
