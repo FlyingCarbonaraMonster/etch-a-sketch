@@ -16,9 +16,13 @@ function createGrid(squares = 32) {
 }
 
 function colorSquares(event) {
-    if (event.target.classList.contains("grid") && event.buttons === 1) {
-        event.target.style.backgroundColor = "black";
+    if (event.target.classList.contains("grid") && event.buttons === 1) { //event.buttons === 1 means left mouse button is pressed
+        event.target.style.backgroundColor = `rgb(${rgb()},${rgb()},${rgb()})`;
     }
+}
+
+function rgb() {
+    return Math.floor(Math.random() * 256);
 }
 
 const container = document.querySelector("#container");
@@ -26,9 +30,10 @@ const btnSquares = document.querySelector(".squares-number");
 
 createGrid();
 
-container.addEventListener('dragstart', event => {
+container.addEventListener('dragstart', event => { //prevent default drag&drop of browsers
     event.preventDefault();
 })
+
 container.addEventListener('mouseover', colorSquares);
 
 btnSquares.addEventListener('click', () => {
