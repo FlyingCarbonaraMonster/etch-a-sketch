@@ -1,14 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: #121212;
+    color: #FFFFFF;
+    font-family: 'VT323', monospace;
+}
+
+#title {
+    color: #F1F5F9;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 40px;
 }
 
 #container {
     display: flex;
     width: 800px;
     height: 800px;
-    background-color: rgba(240, 221, 221, 0.815);
+    background-color: #F8F9FA;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 12px solid #2D3748;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .col {
@@ -19,6 +38,7 @@ body {
 
 .row {
     flex: 1;
+    border: 1px solid gainsboro;
 }
 
 .squares-number {
@@ -27,6 +47,8 @@ body {
     padding: 10px;    
     border-style: none;
     border-radius: 10px;
-    background-color: brown;
+    background-color: #E63946;
     color: white;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
 }
