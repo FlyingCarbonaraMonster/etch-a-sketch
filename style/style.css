@@ -1,12 +1,14 @@
 body {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #container {
     display: flex;
     width: 800px;
     height: 800px;
+    background-color: rgba(240, 221, 221, 0.815);
 }
 
 .col {
@@ -17,4 +19,14 @@ body {
 
 .row {
     flex: 1;
+}
+
+.squares-number {
+    align-self: center;
+    margin-bottom: 20px;
+    padding: 10px;    
+    border-style: none;
+    border-radius: 10px;
+    background-color: brown;
+    color: white;
 }
